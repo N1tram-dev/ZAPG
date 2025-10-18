@@ -37,8 +37,7 @@ def gauss_eliminace_solver(A, b):
 
 #------ test -----
 
-A = np.array([[1, 2], [3, 4]])
-
-b = np.array([5, 6])
+A = np.arange(1, 101, dtype=float).reshape(10, 10) + 20*np.eye(10)
+b = np.arange(1, 11, dtype=float)
 
 print(gauss_eliminace_solver(A, b))
