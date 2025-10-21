@@ -26,9 +26,9 @@ def gauss_solve(A, b, pivot=True, return_intermediate=False, verbose=False):
     U = A.copy()
     bb = b.copy()
 
-    # Forward elimination
+    # eliminace od předu
     for k in range(n - 1):
-        # Partial pivoting
+        # parciální pivot
         if pivot:
             i_max = k + np.argmax(np.abs(U[k:, k]))
             if np.isclose(U[i_max, k], 0.0):
@@ -40,7 +40,7 @@ def gauss_solve(A, b, pivot=True, return_intermediate=False, verbose=False):
             if np.isclose(U[k, k], 0.0):
                 raise np.linalg.LinAlgError("pivot je nula; enable pivoting.")
 
-        # Eliminate entries below the pivot
+        # Pivotní bod eliminace
         for i in range(k + 1, n):
             m = U[i, k] / U[k, k]
             U[i, k:] -= m * U[k, k:]
@@ -49,7 +49,7 @@ def gauss_solve(A, b, pivot=True, return_intermediate=False, verbose=False):
         if verbose:
             print(f"po eliminaci sloupce {k}:\n{U}\n")
 
-    # Back substitution
+    # Zpětná substituce
     x = np.zeros(n, dtype=float)
     for i in range(n - 1, -1, -1):
         s = np.dot(U[i, i + 1:], x[i + 1:])
@@ -106,10 +106,10 @@ def benchmark(sizes=(10, 100, 300, 500), trials=3, pivot=True):
 
 
 def main():
-    # --- Part 1: Solve the provided 3x3 example and print U, bb, x
+    # --- ZDE je TEST pro 3x3 výsledky jsou U, b, x
     A = np.array([[ 2,  1, -1],
-                  [-3, -1,  2],
-                  [-2,  1,  2]], dtype=float)
+                        [-3, -1,  2],
+                        [-2,  1,  2]], dtype=float)
     b = np.array([8, -11, -3], dtype=float)
 
     x, U, bb = gauss_solve(A, b, return_intermediate=True, verbose=False)
