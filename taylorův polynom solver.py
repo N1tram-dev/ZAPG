@@ -1,14 +1,3 @@
-# Taylorova aproximace pro f(x) = sin(x) (Maclaurin kolem a=0)
-# -----------------------------------------------------------
-# Co dělá skript:
-# 1) Vypočítá naše vlastní Taylorovy polynomy n = {2,3,4,6,8}
-# 2) Vykreslí sin(x) a aproximace na [-pi, pi] + grafy absolutní chyby
-# 3) Ověří koeficienty proti sympy.series() (symbolický Taylor)
-# 4) Vypočítá max a RMS chyby na [-pi, pi] a [-1, 1] a vytiskne tabulku
-#
-# Závislosti: numpy, sympy, matplotlib, pandas
-# Instalace: pip install numpy sympy matplotlib pandas
-
 import numpy as np
 import sympy as sp
 import math
