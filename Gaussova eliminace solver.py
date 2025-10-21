@@ -8,7 +8,7 @@ def gauss_solve(A, b, pivot=True, return_intermediate=False, verbose=False):
     Parametry patřebné na vložení (vpisujte do programu sekce test)
     ----------
     A : (n, n) matice určitě čtverec
-    b : (n,) rozšíření
+    b : (n, 1) rozšíření (pravá strana)
 
     Hodnoty které program vrátí
     -------
