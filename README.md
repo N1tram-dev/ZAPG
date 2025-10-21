@@ -1,2 +1,2 @@
 # ZAPG
-Zápočet
+Zápočet Martin Lukášek
